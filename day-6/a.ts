@@ -23,9 +23,9 @@ function getS(position: number, width: number, height: number) {
   return getY(next, width) < height ? next : undefined;
 }
 
-function getW(position: number) {
+function getW(position: number, width: number) {
   const next = position - 1;
-  return next > -1 ? next : undefined;
+  return getY(position, width) === getY(next, width) ? next : undefined;
 }
 
 type Direction = 'N' | 'E' | 'S' | 'W';
